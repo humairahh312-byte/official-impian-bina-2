@@ -332,6 +332,11 @@ const dictionaries: Record<Lang, Dict> = {
     "contact.type.gov": "Government / SPKK",
     "contact.type.inf": "Infrastructure",
     "contact.type.oth": "Other",
+
+    "cert.cidb": "CIDB MALAYSIA",
+    "cert.ssm": "SSM REGISTERED",
+    "cert.spkk": "SPKK REGISTERED",
+    "cert.stb": "STB CERTIFIED",
   },
 
 
@@ -662,6 +667,11 @@ const dictionaries: Record<Lang, Dict> = {
     "contact.type.gov": "Kerajaan / SPKK",
     "contact.type.inf": "Infrastruktur",
     "contact.type.oth": "Lain-lain",
+
+    "cert.cidb": "CIDB MALAYSIA",
+    "cert.ssm": "DAFTAR SSM",
+    "cert.spkk": "DAFTAR SPKK",
+    "cert.stb": "PENSIJILAN STB",
   },
 };
 
