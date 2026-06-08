@@ -278,7 +278,7 @@ const dictionaries: Record<Lang, Dict> = {
     "faq.q4.a": "RM250,000. This allows us to maintain a dedicated on-site supervisor and logistics chain without compromising our core regional clients.",
     
     "faq.q5.q": "How long does a typical residential build take?",
-    "faq.q5.a": "A standard double-storey bungalow takes 8 to 14 months from contract sign to handover. Renovations vary depending on structural scope.",
+    "faq.q5.a": "A standard double-storey bungalow takes 4 to 8 months from contract sign to handover. Renovations vary depending on structural scope.",
     
     "faq.q6.q": "Do you offer post-handover warranty?",
     "faq.q6.a": "Yes — every project includes a 1-year defects liability period and a 10-year structural warranty on new residential builds.",
@@ -608,7 +608,7 @@ const dictionaries: Record<Lang, Dict> = {
     "faq.q4.a": "RM250,000. Ini membolehkan kami mengekalkan penyelia tapak dan rantaian logistik yang khusus tanpa menjejaskan pelanggan serantau teras kami.",
     
     "faq.q5.q": "Berapa lamakah masa yang diambil untuk pembinaan kediaman biasa?",
-    "faq.q5.a": "Sebuah banglo dua tingkat standard mengambil masa 8 hingga 14 bulan dari tandatangan kontrak hingga penyerahan. Kerja ubah suai berbeza bergantung pada skop struktur.",
+    "faq.q5.a": "Sebuah banglo dua tingkat standard mengambil masa 4 hingga 8 bulan dari tandatangan kontrak hingga penyerahan. Kerja ubah suai berbeza bergantung pada skop struktur.",
     
     "faq.q6.q": "Adakah anda menawarkan waranti pasca penyerahan?",
     "faq.q6.a": "Ya — setiap projek termasuk tempoh tanggungan kecacatan selama 1 tahun dan waranti struktur selama 10 tahun untuk binaan kediaman baharu.",

@@ -53,7 +53,6 @@ type Design = {
   plan: string;
 };
 
-// Rooms strings swapped to keys to allow global translation
 const designs: Design[] = [
   { code: "RK01", roomKey: "port.rooms.1b1b", sqft: 388, render: rk01, plan: rk01p },
   { code: "RK02", roomKey: "port.rooms.1b1b", sqft: 425, render: rk02, plan: rk02p },
@@ -132,7 +131,8 @@ function PortfolioPage() {
 
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-foreground/10">
+          {/* UPDATED: grid-cols-4 for larger screen density */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/10">
             {designs.map((d, idx) => (
                 <button
                 key={d.code}
@@ -156,10 +156,10 @@ function PortfolioPage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <h2 className="text-2xl font-black tracking-tighter uppercase">{t("port.card.design")} {d.code}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{t(d.roomKey)}</p>
-                <p className="mt-1 text-sm font-semibold">{d.sqft} {t("port.card.sqft")}</p>
-                <span className="mt-5 mono text-[10px] uppercase tracking-widest text-primary group-hover:underline">
+                <h2 className="text-xl font-black tracking-tighter uppercase">{t("port.card.design")} {d.code}</h2>
+                <p className="mt-2 text-xs text-muted-foreground">{t(d.roomKey)}</p>
+                <p className="mt-1 text-xs font-semibold">{d.sqft} {t("port.card.sqft")}</p>
+                <span className="mt-5 mono text-[9px] uppercase tracking-widest text-primary group-hover:underline">
                   {t("port.card.view")}
                 </span>
               </button>
@@ -168,7 +168,7 @@ function PortfolioPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA Section */}
       <section className="border-t border-foreground/10 bg-accent text-accent-foreground py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="mono text-[11px] uppercase tracking-[0.3em] text-primary mb-5">{t("port.cta.eyebrow")}</p>
