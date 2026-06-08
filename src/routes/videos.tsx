@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
+import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/videos")({
   head: () => ({
@@ -15,20 +16,23 @@ export const Route = createFileRoute("/videos")({
   component: VideosPage,
 });
 
+// Replaced static text with translation keys
 const videos = [
-  { title: "Sri Sendayan Bungalow — Walkthrough", category: "Walkthrough", id: "dQw4w9WgXcQ" },
-  { title: "FT12 Trunk Road — Aerial Progress", category: "Drone", id: "9bZkp7q19f0" },
-  { title: "Senawang Logistics Hub — Final Reveal", category: "Walkthrough", id: "3JZ_D3ELwOQ" },
-  { title: "Bukit Beruang School — Site Progress Q3", category: "Progress", id: "kJQP7kiw5Fk" },
+  { titleKey: "vid.1.title", categoryKey: "vid.1.cat", id: "dQw4w9WgXcQ" },
+  { titleKey: "vid.2.title", categoryKey: "vid.2.cat", id: "9bZkp7q19f0" },
+  { titleKey: "vid.3.title", categoryKey: "vid.3.cat", id: "3JZ_D3ELwOQ" },
+  { titleKey: "vid.4.title", categoryKey: "vid.4.cat", id: "kJQP7kiw5Fk" },
 ];
 
 function VideosPage() {
+  const { t } = useLang();
+
   return (
     <>
       <PageHero
-        eyebrow="Video Archive"
-        title="See the work, not just the photos."
-        intro="Walkthroughs, drone passes, and weekly progress reels — straight from our project YouTube channel."
+        eyebrow={t("vid.hero.eyebrow")}
+        title={t("vid.hero.title")}
+        intro={t("vid.hero.intro")}
       />
 
       <section className="py-12 md:py-20">
@@ -39,14 +43,14 @@ function VideosPage() {
                 <iframe
                   className="w-full h-full"
                   src={`https://www.youtube-nocookie.com/embed/${v.id}`}
-                  title={v.title}
+                  title={t(v.titleKey)}
                   loading="lazy"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               </div>
-              <p className="mono text-[10px] uppercase tracking-widest text-primary mt-4">{v.category}</p>
-              <h3 className="font-bold uppercase tracking-tight mt-1">{v.title}</h3>
+              <p className="mono text-[10px] uppercase tracking-widest text-primary mt-4">{t(v.categoryKey)}</p>
+              <h3 className="font-bold uppercase tracking-tight mt-1">{t(v.titleKey)}</h3>
             </article>
           ))}
         </div>

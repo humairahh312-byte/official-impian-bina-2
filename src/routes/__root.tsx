@@ -12,25 +12,7 @@ import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
-import { LanguageProvider } from "@/lib/i18n";
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  name: "Impian Bina Sdn Bhd",
-  url: "/",
-  email: "officialimpianbina@gmail.com",
-  telephone: "+60-6-760-0000",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "E30 Jalan Melati, Felda Sendayan",
-    postalCode: "71950",
-    addressLocality: "Seremban",
-    addressRegion: "Negeri Sembilan",
-    addressCountry: "MY",
-  },
-  areaServed: ["Negeri Sembilan", "Melaka"],
-};
+import { LanguageProvider, useLang } from "@/lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -97,12 +79,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap",
       },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(organizationJsonLd),
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -112,6 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
+    // 'lang' is managed by client-side state after hydration
     <html lang="en">
       <head>
         <HeadContent />
@@ -126,18 +103,48 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">
-            <Outlet />
-          </main>
-          <Footer />
-          <Toaster />
-        </div>
+        <RootContent />
       </LanguageProvider>
     </QueryClientProvider>
+  );
+}
+
+function RootContent() {
+  const { lang } = useLang();
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    name: "Impian Bina Sdn Bhd",
+    url: "/",
+    email: "officialimpianbina@gmail.com",
+    telephone: "+60-6-760-0000",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "E30 Jalan Melati, Felda Sendayan",
+      postalCode: "71950",
+      addressLocality: "Seremban",
+      addressRegion: "Negeri Sembilan",
+      addressCountry: "MY",
+    },
+    areaServed: ["Negeri Sembilan", "Melaka"],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+        <Toaster />
+      </div>
+    </>
   );
 }

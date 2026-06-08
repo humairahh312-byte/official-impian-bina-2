@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { X } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 // Gallery Image Imports
 import p01 from "@/assets/gallery/p01.webp";
@@ -43,56 +44,57 @@ export const Route = createFileRoute("/projects")({
   component: GalleryPage,
 });
 
-// Structural definition for the construction timeline
+// Structural definition mapped to dictionary keys
 type BuildPhase = {
   id: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descKey: string;
   images: string[];
 };
 
 const constructionPhases: BuildPhase[] = [
   {
     id: "phase-01",
-    title: "Phase 1: Earthworks & Site Preparation",
-    description: "Clearing the soil, site leveling, and establishing secure perimeter access.",
-    images: [p15, p18], // Swap these variables with your actual earthwork photos
+    titleKey: "proj.phase.1.title",
+    descKey: "proj.phase.1.desc",
+    images: [p15, p18],
   },
   {
     id: "phase-02",
-    title: "Phase 2: Foundation & Substructure",
-    description: "Piling, laying the concrete base, footings, and structural groundwork.",
+    titleKey: "proj.phase.2.title",
+    descKey: "proj.phase.2.desc",
     images: [p21, p15],
   },
   {
     id: "phase-03",
-    title: "Phase 3: Superstructure & Framing",
-    description: "Erecting columns, beams, floor slabs, and core structural steel framing.",
+    titleKey: "proj.phase.3.title",
+    descKey: "proj.phase.3.desc",
     images: [],
   },
   {
     id: "phase-04",
-    title: "Phase 4: Exterior & Routing",
-    description: "Roofing installation, brickwork, and initial mechanical/electrical routing.",
+    titleKey: "proj.phase.4.title",
+    descKey: "proj.phase.4.desc",
     images: [p20, p23, p24],
   },
   {
     id: "phase-05",
-    title: "Phase 5: Finishes & Handover",
-    description: "Final architectural finishes, painting, flooring, and completed exterior.",
+    titleKey: "proj.phase.5.title",
+    descKey: "proj.phase.5.desc",
     images: [p02, p04, p06, p07],
   }
 ];
 
 function GalleryPage() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
+  const { t } = useLang();
 
   return (
     <>
       <PageHero
-        eyebrow="Our Execution"
-        title="The Build Sequence."
-        intro="We do not skip steps. Review our standard operational progression from raw earth to final structural handover."
+        eyebrow={t("projects.hero.eyebrow")}
+        title={t("projects.hero.title")}
+        intro={t("projects.hero.intro")}
       />
 
       <div className="py-16 md:py-24 bg-background">
@@ -102,10 +104,10 @@ function GalleryPage() {
               {/* Phase Header */}
               <div className="mb-8 md:mb-12 max-w-2xl">
                 <h2 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-3 text-foreground">
-                  {phase.title}
+                  {t(phase.titleKey)}
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  {phase.description}
+                  {t(phase.descKey)}
                 </p>
               </div>
 
@@ -117,11 +119,11 @@ function GalleryPage() {
                     type="button"
                     onClick={() => setActiveImage(src)}
                     className="group relative aspect-square w-full overflow-hidden bg-muted"
-                    aria-label={`View ${phase.title} image ${idx + 1}`}
+                    aria-label={`View image ${idx + 1}`}
                   >
                     <img
                       src={src}
-                      alt={`${phase.title} - Progress shot ${idx + 1}`}
+                      alt={`Progress shot ${idx + 1}`}
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />

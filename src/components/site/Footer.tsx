@@ -39,7 +39,7 @@ export function Footer() {
               <li>
                 <a 
                   className="text-white/70 hover:text-primary transition-colors inline-block" 
-                  href="https://instagram.com/impianbina" 
+                  href="https://www.instagram.com/officialimpianbina?igsh=azdvd244ZjkxZTV3" 
                   target="_blank" 
                   rel="noreferrer"
                   aria-label="Follow us on Instagram"

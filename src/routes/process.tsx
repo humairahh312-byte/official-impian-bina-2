@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
+import { useLang } from "@/lib/i18n";
 import processImg from "@/assets/process-site.webp";
 
 export const Route = createFileRoute("/process")({
@@ -17,22 +18,24 @@ export const Route = createFileRoute("/process")({
 });
 
 const steps = [
-  { n: "01", title: "Consultation", body: "Free 60-minute briefing to scope your project, budget range, and timeline. Held at our Seremban office, on Zoom, or on-site." },
-  { n: "02", title: "Site Visit", body: "Our project manager and structural engineer survey the land, take measurements, and flag any soil, access, or council constraints." },
-  { n: "03", title: "Quotation", body: "Detailed BQ within 7 working days. Line-item costs for materials, labour, M&E, and permits — no opaque lump sums." },
-  { n: "04", title: "Agreement", body: "PAM or JKR-form contract, with milestone payment schedule and explicit variation-order procedure. Signed before any work begins." },
-  { n: "05", title: "Construction", body: "Daily on-site supervisor, weekly progress photos to your phone, and monthly site-meeting minutes. You're never in the dark." },
-  { n: "06", title: "Completion", body: "Joint defects inspection, CCC documentation, and snag-list resolution before we call the project done." },
-  { n: "07", title: "Handover", body: "Keys, warranty certificate, M&E manuals, and a one-year post-handover maintenance window. We answer the phone if something needs attention." },
+  { n: "01", titleKey: "proc.step.1.title", bodyKey: "proc.step.1.body" },
+  { n: "02", titleKey: "proc.step.2.title", bodyKey: "proc.step.2.body" },
+  { n: "03", titleKey: "proc.step.3.title", bodyKey: "proc.step.3.body" },
+  { n: "04", titleKey: "proc.step.4.title", bodyKey: "proc.step.4.body" },
+  { n: "05", titleKey: "proc.step.5.title", bodyKey: "proc.step.5.body" },
+  { n: "06", titleKey: "proc.step.6.title", bodyKey: "proc.step.6.body" },
+  { n: "07", titleKey: "proc.step.7.title", bodyKey: "proc.step.7.body" },
 ];
 
 function ProcessPage() {
+  const { t } = useLang();
+
   return (
     <>
       <PageHero
-        eyebrow="Customer Process"
-        title="Seven steps. Zero surprises."
-        intro="From the first email to the final key handover, every stage is documented, dated, and signed. Here's exactly what to expect."
+        eyebrow={t("proc.hero.eyebrow")}
+        title={t("proc.hero.title")}
+        intro={t("proc.hero.intro")}
       />
 
       <section className="py-16 md:py-24">
@@ -43,8 +46,8 @@ function ProcessPage() {
                 <div key={s.n} className="flex gap-6 md:gap-8 group">
                   <div className="mono text-primary font-bold text-2xl pt-1 w-12 shrink-0">{s.n}</div>
                   <div className="pb-10 border-b border-foreground/10 flex-1">
-                    <h2 className="font-black uppercase tracking-tight text-xl md:text-2xl mb-3">{s.title}</h2>
-                    <p className="text-muted-foreground leading-relaxed">{s.body}</p>
+                    <h2 className="font-black uppercase tracking-tight text-xl md:text-2xl mb-3">{t(s.titleKey)}</h2>
+                    <p className="text-muted-foreground leading-relaxed">{t(s.bodyKey)}</p>
                   </div>
                 </div>
               ))}
@@ -61,17 +64,17 @@ function ProcessPage() {
               className="w-full aspect-[4/5] object-cover"
             />
             <div className="bg-primary text-primary-foreground p-8 md:p-10 mt-6">
-              <p className="mono text-[10px] uppercase tracking-widest opacity-70 mb-2">Avg. timeline</p>
-              <p className="text-3xl font-black tracking-tighter">8 — 14 months</p>
+              <p className="mono text-[10px] uppercase tracking-widest opacity-70 mb-2">{t("proc.sidebar.timeline")}</p>
+              <p className="text-3xl font-black tracking-tighter">{t("proc.sidebar.months")}</p>
               <p className="text-xs mt-3 opacity-80 leading-relaxed">
-                For a standard double-storey bungalow, from contract sign to key handover. Renovations and commercial fit-outs vary.
+                {t("proc.sidebar.note")}
               </p>
             </div>
             <Link
               to="/contact"
               className="block mt-6 bg-accent text-accent-foreground text-center py-4 text-xs font-bold uppercase tracking-widest hover:bg-foreground transition-colors"
             >
-              Start at step 01
+              {t("proc.sidebar.btn")}
             </Link>
           </aside>
         </div>

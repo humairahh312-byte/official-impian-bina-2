@@ -29,15 +29,15 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { idx: "01", name: "Residential", blurb: "Custom bungalows and modern housing tailored to Malaysian living.", img: residentialImg },
-  { idx: "02", name: "Commercial", blurb: "Shoplots, offices, and retail builds engineered for tenant turnover.", img: commercialImg },
-  { idx: "03", name: "Infrastructure", blurb: "Roads, drainage, and civil works to JKR and CIDB specifications.", img: infraImg },
+  { idx: "01", nameKey: "home.svc.res.name", blurbKey: "home.svc.res.blurb", img: residentialImg },
+  { idx: "02", nameKey: "home.svc.com.name", blurbKey: "home.svc.com.blurb", img: commercialImg },
+  { idx: "03", nameKey: "home.svc.inf.name", blurbKey: "home.svc.inf.blurb", img: infraImg },
 ];
 
 const featuredProjects = [
-  { title: "Bandar Sri Sendayan Bungalow", category: "Residential", img: project1 },
-  { title: "Seremban Commercial Lot", category: "Commercial", img: project2 },
-  { title: "Sekolah Kebangsaan Rebuild", category: "Government", img: project6 },
+  { titleKey: "home.proj.1.title", categoryKey: "home.proj.1.cat", img: project1 },
+  { titleKey: "home.proj.2.title", categoryKey: "home.proj.2.cat", img: project2 },
+  { titleKey: "home.proj.3.title", categoryKey: "home.proj.3.cat", img: project6 },
 ];
 
 function HomePage() {
@@ -112,14 +112,14 @@ function HomePage() {
                 <span className="mono text-xs mb-8 block opacity-50">{s.idx}</span>
                 <img
                   src={s.img}
-                  alt={s.name}
+                  alt={t(s.nameKey)}
                   loading="lazy"
                   width={1200}
                   height={900}
                   className="w-full aspect-[4/3] object-cover mb-8 grayscale-[15%]"
                 />
-                <h3 className="text-2xl font-bold mb-3 tracking-tight uppercase">{s.name}</h3>
-                <p className="text-sm leading-relaxed opacity-70 group-hover:opacity-100">{s.blurb}</p>
+                <h3 className="text-2xl font-bold mb-3 tracking-tight uppercase">{t(s.nameKey)}</h3>
+                <p className="text-sm leading-relaxed opacity-70 group-hover:opacity-100">{t(s.blurbKey)}</p>
               </article>
             ))}
           </div>
@@ -147,19 +147,19 @@ function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {featuredProjects.map((p) => (
-              <article key={p.title} className="group">
+              <article key={t(p.titleKey)} className="group">
                 <div className="overflow-hidden">
                   <img
                     src={p.img}
-                    alt={p.title}
+                    alt={t(p.titleKey)}
                     loading="lazy"
                     width={1200}
                     height={900}
                     className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <p className="mono text-[10px] uppercase tracking-widest text-primary mt-4">{p.category}</p>
-                <h3 className="font-bold uppercase tracking-tight mt-1">{p.title}</h3>
+                <p className="mono text-[10px] uppercase tracking-widest text-primary mt-4">{t(p.categoryKey)}</p>
+                <h3 className="font-bold uppercase tracking-tight mt-1">{t(p.titleKey)}</h3>
               </article>
             ))}
           </div>
