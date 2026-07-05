@@ -61,9 +61,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    title: "Impian Bina | Professional Construction & Design Services",
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "description",
+        content:
+          "Impian Bina provides premier structural construction, architectural design, and renovation services. Contact us today for a consultation.",
+      },
       { name: "author", content: "Impian Bina Sdn Bhd" },
       { name: "theme-color", content: "#c2410c" },
       { property: "og:site_name", content: "Impian Bina" },

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
 // TODO: replace with your project URL once a custom domain is set.
-const BASE_URL = "https://www.impianbina.com";
+const BASE_URL = "https://impianbina.com";
 
 const entries = [
   { path: "/", priority: "1.0", changefreq: "weekly" as const },

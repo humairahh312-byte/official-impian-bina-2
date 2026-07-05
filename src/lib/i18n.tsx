@@ -698,7 +698,7 @@ const dictionaries: Record<Lang, Dict> = {
 
     "contact.hero.eyebrow": "Hubungi Kami",
     "contact.hero.title": "Mari bincangkan projek anda.",
-    "contact.hero.intro": "Telefon, WhatsApp, e-mel, atau datang terus ke pejabat kami di Seremban. Kami maklum balas setiap pertanyaan dalam masa satu hari bekerja.",
+    "contact.hero.intro": "Telefon, WhatsApp, e-mel, atau datang terus ke pejabat kami di Seremban. Kami akan membalas setiap pertanyaan dalam masa satu hari bekerja.",
 
     "contact.wa.channel": "Saluran terpantas",
     "contact.wa.title": "Dapatkan sebut harga di WhatsApp dengan satu ketukan.",
@@ -708,7 +708,7 @@ const dictionaries: Record<Lang, Dict> = {
     "contact.info.phone": "Telefon",
     "contact.info.phone_hours": "Isnin – Sabtu, 8:00 AM – 5:00 PM",
     "contact.info.wa": "WhatsApp",
-    "contact.info.wa_note": "Maklum balas terpantas — dialu-alukan hantar foto tapak",
+    "contact.info.wa_note": "Maklum balas terpantas — dialu-alukan untuk hantar gambar tapak",
     "contact.info.email": "E-mel",
     "contact.info.office": "Pejabat",
 
