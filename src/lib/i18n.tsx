@@ -137,7 +137,7 @@ const dictionaries: Record<Lang, Dict> = {
     "certs.dl": "Download Official PDF",
 
     "certs.1.issuer": "Suruhanjaya Syarikat Malaysia",
-    "certs.1.reg": "Reg. No. 201201040000 (1020000-X)",
+    "certs.1.reg": "Reg. No. 200003065873 (001253478-H)",
     "certs.1.body": "Companies Commission of Malaysia registration. Confirms Impian Bina Sdn Bhd as a legally incorporated Sendirian Berhad entity authorised to trade and enter contracts in Malaysia.",
 
     "certs.2.issuer": "Construction Industry Development Board",
@@ -145,7 +145,7 @@ const dictionaries: Record<Lang, Dict> = {
     "certs.2.body": "Grade G1 contractor licence. Authorises the execution of construction and civil engineering projects up to RM200,000. Essential for local government and private sector micro-projects.",
 
     "certs.3.issuer": "Sijil Perolehan Kerja Kerajaan",
-    "certs.3.reg": "SPKK No. 0120000000-000",
+    "certs.3.reg": "SPKK No. 0120001122-NS061025",
     "certs.3.body": "Government works procurement certificate. Allows direct bidding on JKR, state, and federal construction tenders. Renewed annually with full financial and capability audit.",
 
     "certs.4.issuer": "Sijil Taraf Bumiputera",
@@ -540,7 +540,7 @@ const dictionaries: Record<Lang, Dict> = {
     "certs.dl": "Muat Turun PDF Rasmi",
 
     "certs.1.issuer": "Suruhanjaya Syarikat Malaysia",
-    "certs.1.reg": "No. Pend. 201201040000 (1020000-X)",
+    "certs.1.reg": "No. Pend. 200003065873 (001253478-H)",
     "certs.1.body": "Pendaftaran Suruhanjaya Syarikat Malaysia. Mengesahkan Impian Bina Sdn Bhd sebagai entiti Sendirian Berhad yang diperbadankan secara sah dan diberi kuasa untuk berdagang serta memeterai kontrak di Malaysia.",
 
     "certs.2.issuer": "Lembaga Pembangunan Industri Pembinaan Malaysia",
@@ -548,7 +548,7 @@ const dictionaries: Record<Lang, Dict> = {
     "certs.2.body": "Lesen kontraktor Gred G1. Memberi kuasa untuk melaksanakan projek pembinaan dan kejuruteraan awam sehingga RM200,000. Penting untuk projek mikro kerajaan tempatan dan sektor swasta.",
 
     "certs.3.issuer": "Sijil Perolehan Kerja Kerajaan",
-    "certs.3.reg": "No. SPKK 0120000000-000",
+    "certs.3.reg": "No. SPKK 0120001122-NS061025",
     "certs.3.body": "Sijil perolehan kerja kerajaan. Membolehkan bidaan langsung ke atas tender pembinaan JKR, negeri, dan persekutuan. Diperbaharui setiap tahun dengan audit kewangan dan kemampuan penuh.",
 
     "certs.4.issuer": "Sijil Taraf Bumiputera",

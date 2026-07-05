@@ -126,7 +126,7 @@ function RootContent() {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     name: "Impian Bina Sdn Bhd",
-    url: "/",
+    url: "https://impianbina.com",
     email: "officialimpianbina@gmail.com",
     telephone: "+60-6-760-0000",
     address: {
