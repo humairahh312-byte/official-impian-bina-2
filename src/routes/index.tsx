@@ -10,10 +10,14 @@ import concreteImg from "@/assets/hero-concrete.webp";
 import residentialImg from "@/assets/service-residential.webp";
 import commercialImg from "@/assets/service-commercial.webp";
 import infraImg from "@/assets/service-infrastructure.webp";
-import project1 from "@/assets/project-1.webp";
-import project2 from "@/assets/project-2.webp";
-import project6 from "@/assets/project-6.webp";
+// import project1 from "@/assets/project-1.webp";
+// import project2 from "@/assets/project-2.webp";
+// import project6 from "@/assets/project-6.webp";
 import buildingForegroundImg from "@/assets/hero-building-fg.webp";
+
+import project01 from "@/assets/project-1n.webp";
+import project02 from "@/assets/project-2n.webp";
+import project06 from "@/assets/project-6n.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,10 +44,16 @@ const services = [
 ];
 
 // Update year / location with real project data
+// const featuredProjects = [
+//   { idx: "01", titleKey: "home.proj.1.title", categoryKey: "home.proj.1.cat", img: project01, year: "2023", location: "Seremban" },
+//   { idx: "02", titleKey: "home.proj.2.title", categoryKey: "home.proj.2.cat", img: project02, year: "2022", location: "Port Dickson" },
+//   { idx: "03", titleKey: "home.proj.3.title", categoryKey: "home.proj.3.cat", img: project03, year: "2024", location: "Melaka" },
+// ];
+
 const featuredProjects = [
-  { idx: "01", titleKey: "home.proj.1.title", categoryKey: "home.proj.1.cat", img: project1, year: "2023", location: "Seremban" },
-  { idx: "02", titleKey: "home.proj.2.title", categoryKey: "home.proj.2.cat", img: project2, year: "2022", location: "Port Dickson" },
-  { idx: "03", titleKey: "home.proj.3.title", categoryKey: "home.proj.3.cat", img: project6, year: "2024", location: "Melaka" },
+  { idx: "01", titleKey: "home.proj.1.title", categoryKey: "home.proj.1.cat", img: project01},
+  { idx: "02", titleKey: "home.proj.2.title", categoryKey: "home.proj.2.cat", img: project02 },
+  { idx: "03", titleKey: "home.proj.3.title", categoryKey: "home.proj.3.cat", img: project06 },
 ];
 
 function HomePage() {
@@ -293,9 +303,9 @@ function HomePage() {
                     <h3 className="text-xl font-black uppercase tracking-tight">
                       {t(featuredProjects[0].titleKey)}
                     </h3>
-                    <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
+                    {/* <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground mt-1">
                       {featuredProjects[0].location} · {featuredProjects[0].year}
-                    </p>
+                    </p> */}
                   </div>
                   <Link
                     to="/projects"
@@ -359,9 +369,9 @@ function HomePage() {
                         <h3 className="font-black uppercase tracking-tight text-sm">
                           {t(p.titleKey)}
                         </h3>
-                        <p className="mono text-[9px] uppercase tracking-widest text-muted-foreground mt-1">
+                        {/* <p className="mono text-[9px] uppercase tracking-widest text-muted-foreground mt-1">
                           {p.location} · {p.year}
-                        </p>
+                        </p> */}
                       </div>
                       <Link
                         to="/projects"
